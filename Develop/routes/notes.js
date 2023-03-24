@@ -1,5 +1,5 @@
 const notes = require('express').Router();
-// const uuid = require('uuid');
+const uuid = require('uuid');
 
 const {
   readFromFile,
@@ -47,17 +47,19 @@ notes.delete('/:id', (req, res) => {
   // POST Route for a new UX/UI note
 notes.post('/', (req, res) => {
 
-    let newId = uuid.v4();
+    let id = uuid.v4();
     console.log(req.body);
   
     const { title, text } = req.body;
   
     if (req.body) {
       const newTitle = {
-        newId,
+        id,
         title,
         text,
       };
+
+      console.log('new title ' + newTitle.id, newTitle.title, newTitle.text);
   
       readAndAppend(newTitle, './db/db.json');
       res.json(`Note added successfully 🚀`);
