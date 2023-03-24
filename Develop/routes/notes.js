@@ -1,4 +1,5 @@
 const notes = require('express').Router();
+// const uuid = require('uuid');
 
 const {
   readFromFile,
@@ -8,16 +9,15 @@ const {
 
 notes.get('/', (req, res) => {
     readFromFile('./db/db.json').then((data) => res.json(JSON.parse(data)));
-    // res.sendFile(path.join(__dirname, '../public/index.html'))
 });
 
 // GET Route for a specific note
-notes.get('/:title', (req, res) => {
-    const varTitle = req.params.title;
+notes.get('/:id', (req, res) => {
+    const varId = req.params.title;
     readFromFile('./db/db.json')
       .then((data) => JSON.parse(data))
       .then((json) => {
-        const result = json.filter((notes) => notes.title === varTitle);
+        const result = json.filter((notes) => notes.title === varId);
         return result.length > 0
           ? res.json(result)
           : res.json('That title does not exist');
@@ -25,30 +25,36 @@ notes.get('/:title', (req, res) => {
   });
 
   // DELETE Route for a specific tip
-notes.delete('/:title', (req, res) => {
-    const varTitle = req.params.title;
+notes.delete('/:id', (req, res) => {
+    const varId = req.params.id;
+
+  console.log("ID selected by the user " + varId);
+
     readFromFile('./db/db.json')
       .then((data) => JSON.parse(data))
       .then((json) => {
         // Make a new array of all notes except the one with the title provided in the URL
-        const result = json.filter((notes) => notes.title !== varTitle);
+        const result = json.filter((notes) => notes.id !== varId);
   
         // Save that array to the filesystem
         writeToFile('./db/db.json', result);
   
         // Respond to the DELETE request
-        res.json(`Note ${title} has been deleted 🗑️`);
+        res.json(`Note ${id} has been deleted 🗑️`);
       });
   });
 
   // POST Route for a new UX/UI note
 notes.post('/', (req, res) => {
+
+    let newId = uuid.v4();
     console.log(req.body);
   
     const { title, text } = req.body;
   
     if (req.body) {
       const newTitle = {
+        newId,
         title,
         text,
       };
@@ -61,3 +67,15 @@ notes.post('/', (req, res) => {
   });
 
   module.exports = notes;
+
+  /*
+  
+  [
+    {
+        "id":"1",
+        "title":"Test Title",
+        "text":"Test text"
+    }
+]
+
+  */
