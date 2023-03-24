@@ -40,7 +40,7 @@ notes.delete('/:id', (req, res) => {
         writeToFile('./db/db.json', result);
   
         // Respond to the DELETE request
-        res.json(`Note ${id} has been deleted 🗑️`);
+        res.json(`Note ${varId} has been deleted 🗑️`);
       });
   });
 
@@ -69,15 +69,3 @@ notes.post('/', (req, res) => {
   });
 
   module.exports = notes;
-
-  /*
-  
-  [
-    {
-        "id":"1",
-        "title":"Test Title",
-        "text":"Test text"
-    }
-]
-
-  */
