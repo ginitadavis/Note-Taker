@@ -26,7 +26,7 @@ app.get('/notes', (req, res) =>
 //Routes for "get" /api/notes "post" /api/notes and "delete" /api/notes/:id are in routes / notes.js
 
 app.get('*', (req, res) => 
-    res.sendFile(path.join(__dirname, '../public/index.html'))
+    res.sendFile(path.join(__dirname, './public/index.html'))
 );
 
 // start the server (listen)

@@ -1,10 +1,5 @@
 [
     {
-        "id": "b3972f7c-4f09-478d-8c39-31e0714d224c",
-        "title": "title note 1",
-        "text": "title note 1"
-    },
-    {
         "id": "c397ca6a-e13c-4ce5-b709-9234ae10f971",
         "title": "Title sample 3",
         "text": "Title sample 3"
@@ -20,8 +15,13 @@
         "text": "Title sample 5"
     },
     {
-        "id": "56b828c7-9dd8-4714-89e3-e5f312d355b3",
-        "title": "Title sample 6",
-        "text": "Title sample 6"
+        "id": "b4f26a30-4852-41bd-a25d-f310fcd3c143",
+        "title": "School",
+        "text": "Pickup Elena from school"
+    },
+    {
+        "id": "9e882559-1dd9-479f-91e1-2a823272ad79",
+        "title": "Meeting",
+        "text": "Meeting with client at 9"
     }
 ]
