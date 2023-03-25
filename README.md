@@ -19,7 +19,7 @@ This application had a starter code with all the front end functionality complet
 # Installation
 I installed express using npm i express in the terminal. I also installed uuid to create the ID's for the notes.
 
-![alt text](Main/public/assets/images/deployed-app.png)
+![alt text](public/assets/images/deployed-app.png)
 
 
 
@@ -27,7 +27,7 @@ I installed express using npm i express in the terminal. I also installed uuid t
 
 This application creates, visualizes, and deletes notes from a server. You are able to see a display of all the notes through a website.
 
-Link to the deployed application [Deployed Application](https://drive.google.com/file/d/1zGuKZzuoalbatS5zntjUP5z35saLKSWd/view)
+Link to the deployed application [Note Taker Application](https://drive.google.com/file/d/1zGuKZzuoalbatS5zntjUP5z35saLKSWd/view)
 
 
 # Questions
